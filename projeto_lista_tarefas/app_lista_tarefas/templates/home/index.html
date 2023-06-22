@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+    <div class="offset-1 col-10 list-div">
+        
+        <h1>Lista de tarefas</h1>
+        
+        <a href="novatarefa/">
+            <div class="col-2 add-div">
+                <i class="fa-solid fa-plus fa-lg"></i>Adicionar tarefa
+            </div>
+        </a>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}>{{message}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <ul class="task-list">
+            {% for tarefa in tarefas %}
+            <li class="task-item">
+                <span><a href="/tarefa/{{tarefa.id}}">{{tarefa.title}}</a></span>
+                <a href="deletar/{{tarefa.id}}" class="delete-btn"><span><i class="fa-solid fa-trash"></i></span></a>
+                <a href="editar/{{tarefa.id}}"><span><i class="fa-solid fa-edit"></i></span></a>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="pagination">
+            <span class="step-links">
+                {% if tarefas.has_previous %}
+                    <a href="?page={{tarefas.previous_page_number}}"><i class="fa-solid fa-arrow-left"></i></a>
+                {% endif %}
+            
+            {% if tarefas.paginator.num_pages %}
+            <span class="current">
+                {{tarefas.number}} de {{tarefas.paginator.num_pages}}
+            </span>
+            {% endif %}
+            {% if tarefas.has_next %}
+                    <a href="?page={{tarefas.next_page_number}}"><i class="fa-solid fa-arrow-right"></i></a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+{% endblock %}

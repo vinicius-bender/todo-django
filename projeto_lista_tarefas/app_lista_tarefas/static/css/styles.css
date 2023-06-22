@@ -1,0 +1,114 @@
+.container-fluid{
+    padding: 0;
+}
+
+
+h1{
+    margin-bottom: 20px;
+}
+
+/*Navbar*/
+
+.navbar{
+    font-size: 1.1rem;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+.navbar-nav{
+    margin: auto;
+}
+
+.navbar-brand{
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.navbar-light .navbar-nav a.nav-link{
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.d-flex{
+    margin-right: 20px;
+}
+
+/*Lista*/
+
+a{
+    text-decoration: none;
+}
+
+.add-div{
+    background-color: #3476e2;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    /* display: inline-block; */
+}
+
+.list-div{
+    padding: 0;
+}
+
+.task-list{
+    padding-left: 0;
+}
+
+.task-item{
+    list-style: none;
+    font-size: 20px;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+
+/*Icones*/
+
+.fa-trash, .fa-edit{
+    cursor: pointer;
+    margin: 8px;
+    font-size: 20px;
+    float: right;
+}
+
+.fa-trash{
+    color: #bd1e47;
+}
+
+.fa-edit{
+    color: #13c43f;
+}
+
+.fa-plus{
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+ul.messages{
+    padding: 0;
+}
+
+ul.messages li{
+    list-style: none;
+}
+
+.pagination{
+    margin-bottom: 20px;
+}
+
+.step-links{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step-links .current{
+    margin-left: 5px;
+}
+
+
