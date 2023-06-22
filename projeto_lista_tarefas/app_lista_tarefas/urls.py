@@ -8,4 +8,5 @@ urlpatterns = [
     path('novatarefa/', views.novaTarefa, name='novatarefa'),
     path('editar/<int:id>', views.editar, name='editar'),
     path('deletar/<int:id>', views.deletar, name='deletar'),
+    path('status/<int:id>', views.status, name='status'),
 ]

@@ -16,7 +16,7 @@ def home(request):
     else:
         lista_tarefas = Tarefa.objects.all().order_by('-creat_at')
 
-        paginator = Paginator(lista_tarefas, 5)
+        paginator = Paginator(lista_tarefas, 10)
 
         page = request.GET.get('page')
 
@@ -65,3 +65,13 @@ def deletar(request, id):
 
     return redirect('/')
 
+def status (request, id):
+    tarefa = get_object_or_404(Tarefa, pk=id)
+    
+    if (tarefa.done == 'doing'):
+        tarefa.done = 'done'
+    else:
+        tarefa.done = 'doing'
+
+    tarefa.save()
+    return redirect('/')

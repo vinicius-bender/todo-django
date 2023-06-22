@@ -21,11 +21,16 @@
         {% endif %}
         <ul class="task-list">
             {% for tarefa in tarefas %}
-            <li class="task-item">
-                <span><a href="/tarefa/{{tarefa.id}}">{{tarefa.title}}</a></span>
-                <a href="deletar/{{tarefa.id}}" class="delete-btn"><span><i class="fa-solid fa-trash"></i></span></a>
-                <a href="editar/{{tarefa.id}}"><span><i class="fa-solid fa-edit"></i></span></a>
-            </li>
+            {% if tarefa.done == 'doing' %}
+                <li class="task-item">
+            {% else %}
+                <li class="task-item done">
+            {% endif %}
+                    <span><a href="/tarefa/{{tarefa.id}}">{{tarefa.title}}</a></span>
+                    <a href="deletar/{{tarefa.id}}" class="delete-btn"><span><i class="fa-solid fa-trash"></i></span></a>
+                    <a href="editar/{{tarefa.id}}"><span><i class="fa-solid fa-edit"></i></span></a>
+                    <a href="status/{{tarefa.id}}"><span><i class="fa-solid fa-check"></i></span></a>
+                </li>
             {% endfor %}
         </ul>
         <div class="pagination">
